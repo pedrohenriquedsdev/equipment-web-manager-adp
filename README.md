@@ -1,126 +1,100 @@
-# Gestão de Equipamentos Web
+# 🖥️ Gestão de Equipamentos Web
 
-## Projeto
+> Sistema web para controle de inventário de equipamentos e chamados de manutenção.
 
 Desenvolvido durante o curso Fullstack da [Academia do Programador](https://www.academiadoprogramador.net) 2026
 
-## Funcionalidades
+---
 
-Junior cuida do estoque de equipamentos na empresa onde trabalha. E sempre controla o inventário dos seus equipamentos e as manutenções que eles já sofreram em uma planilha do Excel.
+## 📋 Sobre o Projeto
 
-Desta forma, ele resolveu pedir ajuda do pessoal da Academia do Programador no desenvolvimento de um Software para automatizar o seu serviço.
+Junior gerencia o estoque de equipamentos da empresa onde trabalha e controlava tudo manualmente em planilhas do Excel — fabricantes, inventário e histórico de manutenções.
 
-## 1. Controle de Fabricantes
+Para automatizar esse processo, ele contou com o apoio da **Academia do Programador** no desenvolvimento deste software, que centraliza todas essas informações em uma aplicação web organizada e eficiente.
 
-#### Requisito 1.1:
+---
 
-Como funcionário, Junior quer ter a possibilidade de registrar os fabricantes dos equipamentos registrados.
+## ✨ Funcionalidades
 
-- Deve ter um identificador único (id);
-- Deve ter o nome do fabricante;
-- Deve ter o email do fabricante;
-- Deve ter o telefone do fabricante;
+### 🏭 Controle de Fabricantes
+- Cadastrar fabricantes com nome, e-mail e telefone
+- Visualizar todos os fabricantes e a quantidade de equipamentos vinculados
+- Editar e excluir fabricantes registrados
 
-#### Requisito 1.2:
+### ⚙️ Controle de Equipamentos
+- Cadastrar equipamentos com nome (mín. 6 caracteres), preço de aquisição, fabricante e data de fabricação
+- Visualizar o inventário completo de equipamentos
+- Editar e excluir equipamentos registrados
 
-Como funcionário Junior quer ter a possibilidade de visualizar todos os fabricantes registrados para controle.
+### 📞 Controle de Chamados
+- Abrir chamados de manutenção vinculados a equipamentos, com título, descrição e data de abertura
+- Visualizar todos os chamados com o número de dias em aberto
+- Editar e excluir chamados registrados
 
-- Deve ter o nome do fabricante;
-- Deve ter o email do fabricante;
-- Deve ter o telefone do fabricante;
-- Deve ter a quantidade de equipamentos feitos pelo fabricante em registro;
+---
 
-#### Requisito 1.3:
+## 🚀 Como Executar
 
-Como funcionário, Junior quer ter a possibilidade de editar um fabricante que esteja registrado, sendo que ele possa editar todos os campos.
+### Pré-requisitos
 
-- Deve ter os mesmos critérios que o Requisito 3.1.
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
-#### Requisito 1.4:
+### Passos
 
-Como funcionário, Junior quer ter a possibilidade de excluir um fabricante.
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/gestao-de-equipamentos-web.git
+   cd gestao-de-equipamentos-web
+   ```
 
-## 2. Controle de Equipamentos
+2. **Restaure as dependências**
+   ```bash
+   dotnet restore
+   ```
 
-#### Requisito 2.1:
+3. **Execute o projeto**
+   ```bash
+   dotnet run --project GestaoDeEquipamentosWeb.ConsoleApp
+   ```
 
-Como funcionário, Junior quer ter a possibilidade de registrar equipamentos
+---
 
-- Deve ter identificador único (id)
-- Deve ter um nome com no mínimo 6 caracteres;
-- Deve ter um preço de aquisição;
-- Deve ter uma fabricante;
-- Deve ter uma data de fabricação;
+## 🗂️ Estrutura do Projeto
 
-#### Requisito 2.2:
+```
+GestaoDeEquipamentosWeb/
+├── GestaoDeEquipamentosWeb.ConsoleApp/   # Ponto de entrada da aplicação
+├── GestaoDeEquipamentosWeb.Dominio/      # Entidades e regras de negócio
+├── GestaoDeEquipamentosWeb.Infra/        # Acesso a dados e repositórios
+└── GestaoDeEquipamentosWeb.Testes/       # Testes automatizados
+```
 
-Como funcionário, Junior quer ter a possibilidade de visualizar todos os equipamentos registrados em seu inventário.
+---
 
-- Deve mostrar o id;
-- Deve mostrar o nome;
-- Deve mostrar o preço de aquisição;
-- Deve mostrar a fabricante;
-- Deve mostrar a data de fabricação;
+## 📐 Requisitos do Sistema
 
-#### Requisito 2.3:
+| Módulo | Requisito | Descrição |
+|---|---|---|
+| Fabricantes | Cadastro | Nome, e-mail e telefone |
+| Fabricantes | Listagem | Exibe quantidade de equipamentos vinculados |
+| Fabricantes | Edição / Exclusão | Todos os campos editáveis |
+| Equipamentos | Cadastro | Nome (mín. 6 chars), preço, fabricante, data de fabricação |
+| Equipamentos | Listagem | Exibe todos os campos + ID |
+| Equipamentos | Edição / Exclusão | Todos os campos editáveis |
+| Chamados | Cadastro | Título, descrição, equipamento, data de abertura |
+| Chamados | Listagem | Exibe título, equipamento, data e dias em aberto |
+| Chamados | Edição / Exclusão | Todos os campos editáveis |
 
-Como funcionário, Junior quer ter a possibilidade de editar um equipamento, sendo que ele possa editar todos os campos.
+---
 
-- Deve ter os mesmos critérios que o Requisito 1.1.
+## 🛠️ Tecnologias
 
-#### Requisito 2.4:
+- **C# / .NET 10.0**
+- **ASP.NET Core** (Web)
+- **Entity Framework Core** (ORM)
 
-Como funcionário, Junior quer ter a possibilidade de excluir um equipamento que esteja registrado.
+---
 
-- A lista de equipamentos deve ser atualizada
+## 📄 Licença
 
-## 2. Controle de Chamados
-
-#### Requisito 3.1:
-
-Como funcionário Junior quer ter a possibilidade de registrar os chamados de manutenções que são efetuadas nos equipamentos registrados
-
-- Deve ter um identificador único (id);
-- Deve ter a título do chamado;
-- Deve ter a descrição do chamado;
-- Deve ter um equipamento;
-- Deve ter uma data de abertura;
-
-#### Requisito 3.2:
-
-Como funcionário Junior quer ter a possibilidade de visualizar todos os chamados registrados para controle.
-
-- Deve mostrar o título do chamado;
-- Deve mostrar o equipamento;
-- Deve mostrar a data de abertura;
-- Número de dias que o chamado está aberto
-
-#### Requisito 3.3:
-
-Como funcionário Junior quer ter a possibilidade de editar um chamado que esteja registrado, sendo que ele pode editar todos os campos.
-
-- Deve ter os mesmos critérios que o Requisito 2.1.
-
-#### Requisito 3.4:
-
-Como funcionário Junior quer ter a possibilidade de excluir um chamado.
-
-## Como utilizar
-
-1. Clone o repositório ou baixe o código fonte.
-2. Abra o terminal ou o prompt de comando e navegue até a pasta raiz
-3. Utilize o comando abaixo para restaurar as dependências do projeto.
-
-    ```bash
-    dotnet restore
-    ```
-
-4. Para executar o projeto compilando em tempo real
-
-    ```bash
-    dotnet run --project GestaoDeEquipamentosWeb.ConsoleApp
-    ```
-
-## Requisitos
-
-- .NET 10.0 SDK
+Este projeto foi desenvolvido para fins educacionais no contexto do curso Fullstack da [Academia do Programador](https://www.academiadoprogramador.net).
