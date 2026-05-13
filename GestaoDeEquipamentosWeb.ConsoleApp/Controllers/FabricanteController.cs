@@ -18,32 +18,10 @@ public class FabricanteController : Controller
         repositorioFabricante = new RepositorioFabricanteEmArquivo(contexto);
     }
 
-    [HttpGet]
-
     public ActionResult Listar()
     {
         List<Fabricante> fabricantes = repositorioFabricante.SelecionarTodos();
 
         return View(fabricantes);
     }
-
-    [HttpGet]
-
-    public ActionResult Cadastrar()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    public ActionResult Cadastrar(string nome, string email, string telefone)
-    {
-        Fabricante novoFabricante = new Fabricante(nome, email, telefone);
-
-        repositorioFabricante.Cadastrar(novoFabricante);
-
-        string listarStr = nameof(Listar);
-
-        return RedirectToAction("Listar");
-    }
 }
-
