@@ -3,25 +3,27 @@
     ViewBag.Titulo = "Cadastro de Fabricante";
 }
 
-
 <form action="/Fabricante/Cadastrar" method="post">
     <div>
         <label>Nome</label>
         <br>
-        <input type="text" , name="Nome">
+        <input type="text" name="Nome">
     </div>
 
     <div>
         <label>Email</label>
         <br>
-        <input type="email" , name="Email">
+        <input type="email" name="Email">
     </div>
 
     <div>
         <label>Telefone</label>
         <br>
-        <input type="text" , name="Telefone">
+        <input type="text" name="Telefone">
     </div>
 
+    <hr>
+
+    <a href="/Fabricante/Listar">Voltar</a>
     <button type="submit">Confirmar</button>
 </form>

@@ -7,25 +7,27 @@
 
 @model Fabricante;
 
-
 <form action="/Fabricante/Editar/@Model.Id" method="post">
     <div>
         <label>Nome</label>
         <br>
-        <input type="text" , name="Nome" value="@Model.Nome">
+        <input type="text" name="Nome" value="@Model.Nome">
     </div>
 
     <div>
         <label>Email</label>
         <br>
-        <input type="email" , name="Email" value="@Model.Email>
-        </div>
-
-        <div>
-        <label>Telefone</label>
-        <br>
-        <input type=" text" , name="Telefone" value="@Model.Telefone">
+        <input type="email" name="Email" value="@Model.Email">
     </div>
 
+    <div>
+        <label>Telefone</label>
+        <br>
+        <input type="text" name="Telefone" value="@Model.Telefone">
+    </div>
+
+    <hr>
+
+    <a href="/Fabricante/Listar">Voltar</a>
     <button type="submit">Confirmar</button>
 </form>
