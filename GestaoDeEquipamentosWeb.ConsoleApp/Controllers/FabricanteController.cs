@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoDeEquipamentosWeb.ConsoleApp.Controllers;
 
-//MVC
+// MVC - Model, View, Controller
 public class FabricanteController : Controller
 {
     private readonly IRepositorio<Fabricante> repositorioFabricante;
@@ -15,7 +15,8 @@ public class FabricanteController : Controller
         ContextoJson contexto = new ContextoJson();
         contexto.Carregar();
 
-        repositorioFabricante = new RepositorioFabricanteEmArquivo(contexto);
+        repositorioFabricante =
+            new RepositorioFabricanteEmArquivo(contexto);
     }
 
     [HttpGet]
