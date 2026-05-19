@@ -1,16 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace GestaoDeEquipamentosWeb.ConsoleApp.Controllers
+namespace GestaoDeEquipamentosWeb.ConsoleApp.Controllers;
 
-//MVC - Model, View & Controller
+// MVC - Model, View, Controller
 
-
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    // GET: HomeController
+    public ActionResult Index() // página inicial de um controlador
     {
-        public IActionResult Index() //isso é uma ação chamada index (a página inicial de um controller)
-        {
-            return View();
-        }
+        return View();
     }
+
 }
