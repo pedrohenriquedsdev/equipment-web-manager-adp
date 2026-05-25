@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-﻿// ASP.NET CORE
-
-// BUILDER DE UM SERVER WEB
-WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
-
-// MVC 
-builder.Services.AddControllersWithViews();
-
-// Criação da instância do servidor web
-WebApplication app = builder.Build();
-
-//MIDDLEWARES - Funções que executam em cada chamada que o nosso servidor vai receber
-app.UseRouting();
-app.MapDefaultControllerRoute();
-
-// Inicia o loop da aplicação
-app.Run();
-=======
 ﻿//ASP.NET Core -> Entra para evitar detalhes de baixo nível extremo (web app)
 //Vai atuar como nossa TelasBase de antes
 
@@ -35,4 +16,3 @@ app.MapDefaultControllerRoute(); //rotas específicas
 // Iniciar o loop da app 
 app.Run();
 
->>>>>>> v0

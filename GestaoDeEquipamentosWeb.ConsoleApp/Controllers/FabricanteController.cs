@@ -1,19 +1,11 @@
-<<<<<<< HEAD
 using GestaoDeEquipamentosWeb.ConsoleApp.Compartilhado;
-=======
-﻿using GestaoDeEquipamentosWeb.ConsoleApp.Compartilhado;
->>>>>>> v0
 using GestaoDeEquipamentosWeb.ConsoleApp.Compartilhado.Arquivos;
 using GestaoDeEquipamentosWeb.ConsoleApp.ModuloFabricante;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoDeEquipamentosWeb.ConsoleApp.Controllers;
 
-<<<<<<< HEAD
-//MVC
-=======
 // MVC - Model, View, Controller
->>>>>>> v0
 public class FabricanteController : Controller
 {
     private readonly IRepositorio<Fabricante> repositorioFabricante;
@@ -23,12 +15,8 @@ public class FabricanteController : Controller
         ContextoJson contexto = new ContextoJson();
         contexto.Carregar();
 
-<<<<<<< HEAD
-        repositorioFabricante = new RepositorioFabricanteEmArquivo(contexto);
-=======
         repositorioFabricante =
             new RepositorioFabricanteEmArquivo(contexto);
->>>>>>> v0
     }
 
     [HttpGet]
@@ -100,8 +88,4 @@ public class FabricanteController : Controller
 
         return RedirectToAction(nameof(Listar));
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> v0
