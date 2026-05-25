@@ -1,5 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
 :root {
     font-size: 16px;
+
+    --gold: #b8922a;
+    --gold-light: #d4a843;
+    --gold-pale: #f5e9c8;
+    --gold-dim: rgba(184, 146, 42, 0.10);
+    --gold-border: rgba(184, 146, 42, 0.24);
+    --gold-border-strong: rgba(184, 146, 42, 0.45);
+
+    --ink: #1a1612;
+    --ink-muted: #6b5f4e;
+    --ink-faint: #a89880;
+
+    --surface: rgba(255, 255, 255, 0.70);
+    --surface-high: rgba(255, 255, 255, 0.92);
+    --cream: #fdf8f0;
+
+    --radius-pill: 100vmax;
+    --radius-card: 18px;
+    --radius-input: 10px;
+
+    --shadow-sm: 0 2px 10px rgba(26, 22, 18, 0.06);
+    --shadow-md: 0 8px 30px rgba(26, 22, 18, 0.09);
+    --shadow-lg: 0 24px 64px rgba(26, 22, 18, 0.12);
+    --shadow-gold: 0 6px 24px rgba(184, 146, 42, 0.22);
+
+    --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 html,
@@ -8,208 +42,493 @@ body {
 }
 
 body {
-    font-family: "Google Sans", sans-serif;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    color: var(--ink);
 
-    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    background-color: var(--cream);
+    background-image:
+        radial-gradient(ellipse 70% 55% at 15% 8%, rgba(212, 168, 67, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 45% at 85% 85%, rgba(184, 146, 42, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 30% at 50% 50%, rgba(245, 233, 200, 0.25) 0%, transparent 60%);
 
     display: flex;
     flex-direction: column;
 
     margin: 0 auto;
     max-width: 1200px;
+    padding: 0 28px;
 }
+
+/* ─── Nav ─── */
 
 nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--gold-border);
+    margin-bottom: 8px;
 }
 
 .links-navbar {
     display: flex;
-    gap: 20px;
-
+    gap: 2px;
     margin-left: auto;
+    align-items: center;
 }
 
 .links-navbar>a {
-    color: black;
+    color: var(--ink-muted);
     text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    transition: color var(--transition), background-color var(--transition);
+}
+
+.links-navbar>a:hover {
+    color: var(--gold);
+    background-color: var(--gold-dim);
 }
 
 .btn-cadastrar {
     display: inline-block;
-
-    border: 1px solid rgb(152, 62, 209);
-    border-radius: 100vmax;
-
-    color: rgb(152, 62, 209);
+    border: 1.5px solid var(--gold);
+    border-radius: var(--radius-pill);
+    color: var(--gold);
     text-decoration: none;
-    font-weight: 500;
-
-    padding: 8px 40px;
-
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    padding: 8px 26px;
     margin: 15px 0;
+    transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
+
+.btn-cadastrar:hover {
+    background-color: var(--gold);
+    color: #fff;
+    box-shadow: var(--shadow-gold);
+}
+
+/* ─── Filter Pills ─── */
 
 .filtros-listagem {
     display: flex;
-    gap: 10px;
-
-    margin: 18px 8px;
+    gap: 8px;
+    margin: 22px 0 16px;
+    flex-wrap: wrap;
 }
 
 .filtros-listagem a {
-    border: 1px solid rgba(152, 62, 209, 0.45);
-    border-radius: 100vmax;
-    color: rgb(129, 46, 181);
-    font-size: 0.95rem;
+    border: 1.5px solid var(--gold-border-strong);
+    border-radius: var(--radius-pill);
+    color: var(--gold);
+    font-size: 0.84rem;
     font-weight: 600;
-    padding: 8px 22px;
+    padding: 7px 20px;
     text-decoration: none;
     cursor: pointer;
+    background-color: transparent;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.filtros-listagem a:hover {
+    background-color: var(--gold-dim);
+    border-color: var(--gold);
 }
 
 .filtros-listagem a.ativo {
-    background-color: rgb(152, 62, 209);
-    color: white;
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+    box-shadow: var(--shadow-gold);
 }
+
+/* ─── Table ─── */
 
 .registros {
     width: 100%;
     min-width: 720px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gold-border);
 }
 
 .registros th,
 .registros td {
-    padding: 16px 18px;
-    color: rgb(55, 44, 59);
+    padding: 14px 20px;
+    color: var(--ink);
     text-align: left;
     vertical-align: middle;
 }
 
 .registros th {
-    background-color: rgba(152, 62, 209, 0.14);
-    color: rgb(129, 46, 181);
-    /* rem = relativo ao elemento root */
-    font-size: 0.85rem;
-    font-weight: 700;
+    background-color: rgba(184, 146, 42, 0.07);
+    color: var(--gold);
+    font-family: "DM Mono", monospace;
+    font-size: 0.70rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
 .registros tbody tr {
-    background-color: rgba(255, 255, 255, 0.45);
+    background-color: var(--surface);
+    transition: background-color var(--transition);
+}
+
+.registros tbody tr:hover {
+    background-color: var(--surface-high);
+}
+
+.registros tbody tr+tr td {
+    border-top: 1px solid rgba(184, 146, 42, 0.09);
 }
 
 .registros a {
-    border: 1px solid rgba(152, 62, 209, 0.45);
-    border-radius: 100vmax;
-    color: rgb(129, 46, 181);
-    font-size: 0.9rem;
+    border: 1.5px solid var(--gold-border-strong);
+    border-radius: var(--radius-pill);
+    color: var(--gold);
+    font-size: 0.82rem;
     font-weight: 600;
-    padding: 7px 16px;
+    padding: 6px 16px;
     text-decoration: none;
+    transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
+
+.registros a:hover {
+    background-color: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+    box-shadow: 0 3px 14px rgba(184, 146, 42, 0.28);
+}
+
+/* ─── Form Card ─── */
 
 .formulario {
-    width: min(100%, 620px);
-    margin: 30px auto;
-    padding: 28px;
-
-    border: 1px solid rgba(152, 62, 209, 0.22);
-    border-radius: 14px;
-
-    background-color: rgba(255, 255, 255, 0.55);
-    box-shadow: 0 18px 45px rgba(55, 44, 59, 0.12);
+    width: min(100%, 600px);
+    margin: 40px auto;
+    padding: 38px 34px;
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-card);
+    background-color: var(--surface-high);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-lg);
 }
 
+/* ─── Form Fields ─── */
+
 .formulario-campo {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .formulario-campo label {
     display: block;
-    color: rgb(129, 46, 181);
-    font-size: 0.85rem;
-    font-weight: 700;
+    color: var(--gold);
+    font-family: "DM Mono", monospace;
+    font-size: 0.70rem;
+    font-weight: 500;
+    letter-spacing: 0.10em;
     text-transform: uppercase;
+    margin-bottom: 6px;
 }
 
 .formulario-campo input,
 .formulario-campo select,
 .formulario-campo textarea {
     width: 100%;
-    box-sizing: border-box;
-    border: 1px solid rgba(152, 62, 209, 0.45);
-    border-radius: 10px;
-    padding: 12px 14px;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: rgb(55, 44, 59);
-    font-family: inherit;
-    font-size: 1rem;
+    border: 1.5px solid var(--gold-border);
+    border-radius: var(--radius-input);
+    padding: 11px 14px;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: var(--ink);
+    font-family: "Outfit", inherit;
+    font-size: 0.95rem;
+    transition: border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .formulario-campo input:focus,
 .formulario-campo select:focus,
 .formulario-campo textarea:focus {
-    border-color: rgb(152, 62, 209);
-    outline: 3px solid rgba(152, 62, 209, 0.16);
+    border-color: var(--gold);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(184, 146, 42, 0.14);
+    background-color: #fff;
 }
 
 .formulario-campo input:disabled,
 .formulario-campo select:disabled,
 .formulario-campo textarea:disabled {
-    background-color: rgba(255, 255, 255, 0.35);
-    color: rgba(55, 44, 59, 0.7);
+    background-color: rgba(255, 255, 255, 0.30);
+    color: var(--ink-faint);
+    cursor: not-allowed;
 }
+
+/* ─── Form Actions ─── */
 
 .formulario-acoes {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 10px;
+    margin-top: 32px;
 }
 
 .formulario-acoes a,
 .formulario-acoes button {
-    border: 1px solid rgba(152, 62, 209, 0.45);
-    border-radius: 100vmax;
+    border: 1.5px solid var(--gold-border-strong);
+    border-radius: var(--radius-pill);
     background-color: transparent;
-    color: rgb(129, 46, 181);
+    color: var(--gold);
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    padding: 9px 24px;
+    padding: 9px 26px;
     text-decoration: none;
     cursor: pointer;
+    transition: background-color var(--transition), color var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.formulario-acoes a:hover {
+    background-color: var(--gold-dim);
+    border-color: var(--gold);
 }
 
 .formulario-acoes button {
-    background-color: rgb(152, 62, 209);
-    color: white;
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
 }
+
+.formulario-acoes button:hover {
+    background-color: #a07e22;
+    border-color: #a07e22;
+    box-shadow: var(--shadow-gold);
+}
+
+/* ─── Alerts & Validation ─── */
 
 .formulario-alerta {
     margin-top: 0;
     margin-bottom: 24px;
-    border-left: 4px solid rgb(152, 62, 209);
-    border-radius: 10px;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
     padding: 14px 16px;
-    background-color: rgba(152, 62, 209, 0.1);
-    color: rgb(55, 44, 59);
-    font-weight: 600;
+    background-color: var(--gold-pale);
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 0.93rem;
 }
 
 .formulario-validacao-sumario {
     margin-bottom: 18px;
-    color: rgb(160, 44, 74);
+    color: #9b1c1c;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .formulario-validacao-campo {
     display: block;
-    margin-top: 7px;
-    color: rgb(160, 44, 74);
-    font-size: 0.9rem;
+    margin-top: 6px;
+    color: #9b1c1c;
+    font-size: 0.82rem;
     font-weight: 600;
+}
+
+/* ─── Hero (Index) ─── */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px 60px;
+    gap: 0;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-family: "DM Mono", monospace;
+    font-size: 0.70rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background-color: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-pill);
+    padding: 6px 18px;
+    margin-bottom: 28px;
+}
+
+.hero-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+}
+
+.hero-title strong {
+    font-weight: 500;
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--ink-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin: 16px 0 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-actions .btn-primary {
+    display: inline-block;
+    background-color: var(--gold);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    padding: 12px 32px;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--gold);
+    box-shadow: var(--shadow-gold);
+    transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.hero-actions .btn-primary:hover {
+    background-color: #a07e22;
+    border-color: #a07e22;
+    box-shadow: 0 8px 30px rgba(184, 146, 42, 0.35);
+}
+
+.hero-actions .btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 12px 32px;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--gold-border-strong);
+    transition: background-color var(--transition), border-color var(--transition);
+}
+
+.hero-actions .btn-secondary:hover {
+    background-color: var(--gold-dim);
+    border-color: var(--gold);
+}
+
+/* ─── Stats strip ─── */
+
+.stats-strip {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 40px 0 60px;
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-card);
+    background-color: var(--surface-high);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px;
+    border-right: 1px solid var(--gold-border);
+    gap: 4px;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: "DM Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+}
+
+/* ─── Feature cards ─── */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+.feature-card {
+    background-color: var(--surface-high);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--gold-border-strong);
+}
+
+.feature-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 8px;
+}
+
+.feature-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ─── Divider ─── */
+
+.divider-gold {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 48px;
+    border: none;
 }
