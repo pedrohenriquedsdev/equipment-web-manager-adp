@@ -1,14 +1,5 @@
 <div align="center">
 
-<br/>
-
-```
-╔═══════════════════════════════════════════════════════╗
-║          G E S T Ã O  D E  E Q U I P A M E N T O S    ║
-║                    W  E  B                            ║
-╚═══════════════════════════════════════════════════════╝
-```
-
 **Gerencie com elegância e precisão.**
 
 *Uma plataforma web pensada para simplificar processos, centralizar informações e dar clareza a cada decisão.*
