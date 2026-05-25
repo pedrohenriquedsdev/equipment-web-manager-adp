@@ -6,6 +6,8 @@ using GestaoDeEquipamentosWeb.ConsoleApp.ModuloEquipamento;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+namespace GestaoDeEquipamentosWeb.ConsoleApp.Controllers;
+
 public class ChamadoController : Controller
 {
     private readonly IRepositorio<Chamado> repositorioChamado;
@@ -98,7 +100,8 @@ public class ChamadoController : Controller
             chamado.Id,
             chamado.Titulo,
             chamado.Descricao,
-            chamado.Equipamento.Id
+            chamado.Equipamento.Id,
+            chamado.EstaConcluido
         );
 
         ViewBag.Equipamentos = CarregarEquipamentos();
@@ -130,6 +133,7 @@ public class ChamadoController : Controller
         Chamado chamadoAtualizado = new Chamado(
             editarVm.Titulo,
             equipamento!,
+            editarVm.EstaConcluido,
             editarVm.Descricao
         );
 
