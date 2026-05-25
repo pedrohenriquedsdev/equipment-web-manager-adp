@@ -60,7 +60,7 @@ body {
     padding: 0 28px;
 }
 
-/* ─── Nav ─── */
+/*  Nav  */
 
 nav {
     display: flex;
@@ -113,7 +113,7 @@ nav {
     box-shadow: var(--shadow-gold);
 }
 
-/* ─── Filter Pills ─── */
+/*  Filter Pills  */
 
 .filtros-listagem {
     display: flex;
@@ -147,7 +147,7 @@ nav {
     box-shadow: var(--shadow-gold);
 }
 
-/* ─── Table ─── */
+/*  Table  */
 
 .registros {
     width: 100%;
@@ -209,7 +209,7 @@ nav {
     box-shadow: 0 3px 14px rgba(184, 146, 42, 0.28);
 }
 
-/* ─── Form Card ─── */
+/*  Form Card  */
 
 .formulario {
     width: min(100%, 600px);
@@ -223,7 +223,7 @@ nav {
     box-shadow: var(--shadow-lg);
 }
 
-/* ─── Form Fields ─── */
+/*  Form Fields  */
 
 .formulario-campo {
     margin-bottom: 22px;
@@ -271,7 +271,7 @@ nav {
     cursor: not-allowed;
 }
 
-/* ─── Form Actions ─── */
+/*  Form Actions  */
 
 .formulario-acoes {
     display: flex;
@@ -312,7 +312,7 @@ nav {
     box-shadow: var(--shadow-gold);
 }
 
-/* ─── Alerts & Validation ─── */
+/*  Alerts & Validation  */
 
 .formulario-alerta {
     margin-top: 0;
@@ -341,7 +341,7 @@ nav {
     font-weight: 600;
 }
 
-/* ─── Hero (Index) ─── */
+/*  Hero (Index)  */
 
 .hero {
     display: flex;
@@ -438,7 +438,7 @@ nav {
     border-color: var(--gold);
 }
 
-/* ─── Stats strip ─── */
+/*  Stats strip  */
 
 .stats-strip {
     display: flex;
@@ -483,7 +483,7 @@ nav {
     color: var(--ink-faint);
 }
 
-/* ─── Feature cards ─── */
+/*  Feature cards  */
 
 .features-grid {
     display: grid;
