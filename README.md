@@ -72,7 +72,7 @@ Com o apoio da [Academia do Programador](https://www.academiadoprogramador.net),
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/gestao-de-equipamentos-web.git
+git clone https://github.com/seu-usuario/equipment-web-manager-adp.git
 cd gestao-de-equipamentos-web
 
 # 2. Restaure as dependências
