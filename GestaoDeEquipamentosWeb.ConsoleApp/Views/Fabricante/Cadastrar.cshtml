@@ -1,14 +1,7 @@
-﻿﻿<h1>Gestão de Equipamentos</h1>
-
-<hr>
-    <a href="/">Início</a> -
-    <a href="/Fabricante/Listar">Controle de Fabricantes</a> -
-    <a href="/Equipamento/Listar">Controle de Equipamentos</a> -
-    <a href="/Chamado/Listar">Controle de Chamados</a> -
-    <a href="https://www.academiadoprogramador.net" target="_blank">Academia do Programador</a>
-<hr>
-
-<h2>Cadastro de Fabricante</h2>
+﻿﻿@{
+    Layout = "_Layout"; //ao declarar esse layout, precisamos dizer onde ele vai renderizar...
+    ViewBag.Titulo = "Cadastro de Fabricante";
+}
 
 <form action="/Fabricante/Cadastrar" method="post">
     <div>
@@ -31,6 +24,6 @@
 
     <hr>
 
-    <a href="/Fabricante/Listar">Voltar</a> 
+    <a href="/Fabricante/Listar">Voltar</a>
     <button type="submit">Confirmar</button>
 </form>

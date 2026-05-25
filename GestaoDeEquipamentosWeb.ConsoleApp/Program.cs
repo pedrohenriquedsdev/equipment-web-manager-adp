@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews(); // -> // tipagem de app web (como ir
 WebApplication app = builder.Build();
 
 //Middlewares - Funções que executam em cada chamada que o nosso server vai receber
+app.UseStaticFiles();
 app.UseRouting(); // considera a chamada do server e + as rotas dele
 app.MapDefaultControllerRoute(); //rotas específicas
 
